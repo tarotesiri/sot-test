@@ -1,0 +1,20 @@
+# /**
+#  *  ============================================================================
+#  *    Project Name : SIAM Online Training
+#  *    File Name : .htaccess
+#  *    Description : ป้องกันการรันไฟล์สคริปต์ (PHP/CGI/Python) ในโฟลเดอร์ uploads เพื่อความปลอดภัย
+#  * ============================================================================
+#  *    Author : TaRote SiRi
+#  *    Email : *******.***@*****.***
+#  *    Created Date : 2026-11-01
+#  *    Version : 1.0.0
+#  *    License : Proprietary (ใช้ภายในองค์กร Siridev.Com เท่านั้น)
+#  * ============================================================================
+# **/
+Options -Indexes
+<FilesMatch "\.(?i:php\d?|phtml|phar|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>

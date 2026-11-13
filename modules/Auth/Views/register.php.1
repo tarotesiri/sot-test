@@ -1,0 +1,68 @@
+<?php
+/**
+ * ==============================================================================
+ * Project Name : SIAM Online Training
+ * File Name    : register.php
+ * Description  : หน้าแบบฟอร์มสมัครสมาชิกใหม่ (Register) ของระบบ
+ * ==============================================================================
+ * Author       : TaRote SiRi
+ * Email        : *******.***@*****.***
+ * Created Date : 2026-11-01
+ * Version      : 1.0.0
+ * License      : Proprietary (ใช้ภายในองค์กร Siridev.Com เท่านั้น)
+ * ==============================================================================
+ */
+
+declare(strict_types=1);
+?>
+
+<div style="max-width: 500px; margin: 40px auto; padding: 0 15px;">
+    <div style="background: #fff; border: 1px solid #dee2e6; border-radius: 8px; padding: 30px; box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);">
+        
+        <!-- หัวข้อหน้าสมัครสมาชิก -->
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h2 style="margin: 0 0 10px 0; font-weight: bold; color: #333;"><?= icon('user-plus') ?> สมัครสมาชิกใหม่</h2>
+            <p style="color: #6c757d; margin: 0; font-size: 0.95em;">กรอกข้อมูลรายละเอียดด้านล่างเพื่อสร้างบัญชีผู้ใช้งานระบบ</p>
+        </div>
+
+        <?php if (!empty($error)): ?>
+            <div style="background: #f8d7da; color: #842029; padding: 12px 15px; border: 1px solid #f5c2c7; border-radius: 6px; margin-bottom: 20px; font-size: 0.9em;">
+                <?= e($error) ?>
+            </div>
+        <?php endif; ?>
+
+        <!-- ฟอร์มลงทะเบียน -->
+        <form action="<?= e(url('auth/register')) ?>" method="POST">
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">ชื่อ-นามสกุล</label>
+                <input type="text" name="name" required placeholder="กรอกชื่อและนามสกุลจริง" style="width: 100%; padding: 10px 12px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; font-size: 1em;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">อีเมล (สำหรับเข้าสู่ระบบ)</label>
+                <input type="email" name="email" required placeholder="example@email.com" style="width: 100%; padding: 10px 12px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; font-size: 1em;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">รหัสผ่าน</label>
+                <input type="password" name="password" required placeholder="กำหนดรหัสผ่านอย่างน้อย 6 ตัวอักษร" style="width: 100%; padding: 10px 12px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; font-size: 1em;">
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">ยืนยันรหัสผ่าน</label>
+                <input type="password" name="confirm_password" required placeholder="กรอกรหัสผ่านให้อีกครั้งเพื่อยืนยัน" style="width: 100%; padding: 10px 12px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; font-size: 1em;">
+            </div>
+
+            <button type="submit" style="width: 100%; background: #198754; color: #fff; border: none; padding: 12px; border-radius: 6px; font-size: 1em; font-weight: bold; cursor: pointer; transition: background 0.2s;">
+                <?= icon('user-plus') ?> ลงทะเบียนสมาชิก
+            </button>
+
+        </form>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 0.9em; color: #6c757d;">
+            มีบัญชีผู้ใช้งานอยู่แล้ว? <a href="<?= e(url('auth/login')) ?>" style="color: #0d6efd; text-decoration: none; font-weight: 500;">เข้าสู่ระบบที่นี่</a>
+        </div>
+
+    </div>
+</div>

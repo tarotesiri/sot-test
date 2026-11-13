@@ -1,0 +1,13 @@
+Options -Indexes
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # ถ้าเรียกไฟล์หรือโฟลเดอร์ที่มีอยู่จริงใน public ให้ข้ามไป
+    RewriteCond %{REQUEST_URI} !^/public/
+    
+    # ส่งคำขอทั้งหมดเข้าไปที่โฟลเดอร์ public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
