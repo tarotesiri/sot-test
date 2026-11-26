@@ -1,0 +1,22 @@
+<!--
+/**
+ *  ============================================================================
+ *    Project Name : SIAM Online Training
+ *    File Name : logo.svg
+ *    Description : ไอคอน/โลโก้เริ่มต้นของระบบ (SVG)
+ * ============================================================================
+ *    Author : TaRote SiRi
+ *    Email : *******.***@*****.***
+ *    Created Date : 2026-11-01
+ *    Version : 1.0.0
+ *    License : Proprietary (ใช้ภายในองค์กร Siridev.Com เท่านั้น)
+ * ============================================================================
+**/
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#23a35b"/><stop offset="1" stop-color="#0f5731"/></linearGradient></defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <path d="M13 22c6.5-3.5 12.5-3.5 19 1v24c-6.5-4.5-12.5-4.5-19-1z" fill="#fff"/>
+  <path d="M51 22c-6.5-3.5-12.5-3.5-19 1v24c6.5-4.5 12.5-4.5 19-1z" fill="#d8f3e2"/>
+  <circle cx="47" cy="14" r="5" fill="#93c5fd"/>
+</svg>
